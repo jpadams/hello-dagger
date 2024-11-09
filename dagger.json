@@ -1,0 +1,13 @@
+{
+  "name": "hello-dagger",
+  "engineVersion": "v0.14.0",
+  "sdk": "typescript",
+  "dependencies": [
+    {
+      "name": "ngrok",
+      "source": "ngrok",
+      "pin": ""
+    }
+  ],
+  "source": ".dagger"
+}

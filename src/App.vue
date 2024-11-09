@@ -6,7 +6,22 @@ import HelloWorld from './components/HelloWorld.vue'
 <template>
   <header>
     <div class="wrapper">
-      <HelloWorld msg="Hello from Dagger!" />
+      <HelloWorld msg="Hello from KubeCon!" />
+      <pre>
+dagger call build
+
+dagger -m github.com/jpadams/qr call \
+  generate-ascii-qr --data https://docs.dagger.io/quickstart
+
+dagger core \
+  container \
+  from --address nginx:1.25-alpine \
+  with-exposed-port --port 80
+
+cmd:'op read "op://Private/ngrok/token" -n'
+export NGROK_TOKEN=$(op read "op://Private/ngrok/token" -n)
+cmd:'op read "op://Private/ngrok/api" -n'
+      </pre>
     </div>
   </header>
 </template>
