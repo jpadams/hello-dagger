@@ -6,7 +6,7 @@ import HelloWorld from './components/HelloWorld.vue'
 <template>
   <header>
     <div class="wrapper">
-      <HelloWorld msg="Hello from KubeCon!" />
+      <HelloWorld msg="Hello AppDeveloperCon!" />
       <pre>
 dagger -m github.com/jpadams/qr call \
   generate-ascii-qr --data https://docs.dagger.io/quickstart
@@ -14,6 +14,8 @@ dagger -m github.com/jpadams/qr call \
 dagger call build
 
 dagger call build --source .
+
+dagger call build -i # --interactive
 
 dagger call build --source https://github.com/dagger/hello-dagger\#1c4f2ac2ecbf34cb30ed3c9815f9f9b060415c8b publish ttl.sh/appdevcon
 

@@ -22,13 +22,13 @@ class HelloDagger {
   build(
     @argument({ defaultPath: "/" }) source: Directory,
   ): Container {
-    const build = this.buildEnv(source)
+    const site = this.buildEnv(source)
       .withExec(["npm", "run", "build"])
       .directory("./dist")
     return dag
       .container()
       .from("nginx:1.25-alpine")
-      .withDirectory("/usr/share/nginx/html", build)
+      .withDirectory("/usr/share/nginx/html", site)
       .withExposedPort(80)
   }
 
