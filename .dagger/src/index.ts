@@ -58,7 +58,7 @@ class HelloDagger {
       .withDirectory("/src", source)
       .withMountedCache("/root/.npm", nodeCache)
       .withWorkdir("/src")
-      .withExec(["nopm", "install"])
+      .withExec(["npm", "install"])
   }
 
   /**
@@ -72,5 +72,13 @@ class HelloDagger {
   ): Container {
     const service = this.build(source).asService()
     return dag.ngrok().share(service, port, ngrokToken)
+  }
+
+  /**
+   * Nginx web server stub
+   */
+  @func()
+  web(): Container {
+  	return dag.container().from("nginx")
   }
 }
