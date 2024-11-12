@@ -15,20 +15,16 @@ dagger call build
 
 dagger call build --source .
 
-dagger call build -i # --interactive
-
 dagger call build --source https://github.com/dagger/hello-dagger\#1c4f2ac2ecbf34cb30ed3c9815f9f9b060415c8b publish ttl.sh/appdevcon
+
+dagger call build -i # --interactive
 
 export NGROK_TOKEN=$(op read "op://Private/ngrok/token" -n)
 dagger call share --ngrok-token=env:NGROK_TOKEN up
+
 dagger call share --ngrok-token=cmd:'op read "op://Private/ngrok/token" -n'
 
-dagger -m github.com/jpadams/qr call \
-  generate-ascii-qr --data https://docs.dagger.io/quickstart
-
-cmd:'op read "op://Private/ngrok/token" -n'
-export NGROK_TOKEN=$(op read "op://Private/ngrok/token" -n)
-cmd:'op read "op://Private/ngrok/api" -n'
+dagger call qr --api-token cmd:'op read "op://Private/ngrok/api" -n'
       </pre>
     </div>
   </header>
