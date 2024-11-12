@@ -9,9 +9,9 @@ import HelloWorld from './components/HelloWorld.vue'
       <HelloWorld msg="Hello AppDeveloperCon!" />
       <pre>
 dagger -m github.com/jpadams/qr call \
-  generate-ascii-qr --data https://docs.dagger.io/quickstart
+  generate-ascii-qr --data https://docs.dagger.io/quickstart #remote mod
 
-dagger call build
+dagger call build        #context dir for source
 
 dagger call build --source .
 
