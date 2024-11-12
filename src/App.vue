@@ -15,6 +15,9 @@ dagger call build        #context dir for source
 
 dagger call build --source .
 
+dagger call build as-service up
+dagger call build up
+
 dagger call build --source https://github.com/dagger/hello-dagger\#1c4f2ac2ecbf34cb30ed3c9815f9f9b060415c8b publish ttl.sh/appdevcon
 
 dagger call build -i # --interactive
