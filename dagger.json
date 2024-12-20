@@ -1,12 +1,12 @@
 {
   "name": "hello-dagger",
-  "engineVersion": "v0.14.0",
+  "engineVersion": "v0.15.1",
   "sdk": "typescript",
   "dependencies": [
     {
       "name": "ngrok",
-      "source": "ngrok",
-      "pin": ""
+      "source": "github.com/jpadams/ngrok",
+      "pin": "705430d08b87aa7d2067c90a5a7e1e64e4069062"
     }
   ],
   "source": ".dagger"
